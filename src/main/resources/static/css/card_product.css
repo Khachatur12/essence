@@ -1,0 +1,131 @@
+.card{
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+}
+.column {
+    float: left;
+    margin: 0 10px;
+}
+.product-wrapper{
+    max-width: 260px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+.card_img{
+    width: 260px;
+    height: 370px;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    position: relative;
+}
+.card_img img {
+    max-width: 100%;
+    height: auto;
+    float: left;
+    position: absolute;
+    -webkit-transition: opacity 400ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
+    /*-moz-transition: opacity 500ms ease-in-out;*/
+    /*-o-transition: opacity 500ms ease-in-out;*/
+}
+.product-description{
+    padding: 10px;
+}
+.product-description span{
+    font-size: 12px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #787878;
+
+}
+.product_price, .product_old_price{
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.product_old_price{
+    text-decoration: line-through;
+    color: #787878;
+}
+.product_tittle{
+
+}
+.product_title a{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 5px 0 10px 0;
+    text-transform: capitalize;
+}
+.card__edit{
+    float: right;
+    margin-left: 10px;
+    color: #0315ff;
+}
+.product-badge{
+    background-color: #dc0345;
+    height: 25px;
+    min-width: 50px;
+    color: #ffffff;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 13px;
+    padding: 0 10px;
+    display: inline-block;
+    line-height: 25px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+#product-favourite {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    line-height: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
+}
+#product-favourite a {
+    font-family: 'Mulish', sans-serif;
+    height: 25px;
+    width: 50px;
+}
+#product-favourite a:before {
+    content: "\f08a";
+    font-family: 'icomoon';
+    font-size: 15px;
+    color: #000;
+}
+.add-to-cart__btn{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    line-height: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
+}
+.add-to-cart__btn a{
+    height: 50px;
+    width: 218px;
+    color: #ffffff;
+    padding: 0 40px;
+    font-size: 12px;
+    line-height: 50px;
+    background-color: #0315ff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition-duration: 500ms;
+}
+.add-to-cart__btn a:hover{
+    background-color: #dc0345;
+}

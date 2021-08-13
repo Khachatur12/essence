@@ -1,0 +1,10 @@
+.product_details__area{
+	width: 100%;
+	height: 900px;
+	position: relative;
+}
+.single_product_thumb{
+	width: 50%;
+	height: 100%;
+	float: left;
+}

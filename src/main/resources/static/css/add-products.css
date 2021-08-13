@@ -1,0 +1,38 @@
+.product_features{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.product_name{
+    width: 452px;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+}
+.product_price{
+    width: 140px;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+}
+.product_price::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+.product_images{
+
+}
+.categories_area{
+
+}
+.categories_menu{
+    float: left;
+}
+.colors_menu{
+    float: left;
+    margin-left: 100px;
+}
+.categories_menu ul{
+
+}
+.categories_menu ul li{
+    margin-left: 20px;
+}

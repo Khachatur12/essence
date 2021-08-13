@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <div th:fragment="card__part">
+        <div class="card">
+            <div class="product-wrapper">
+                <div class="card_img">
+                    <div th:if="${product.getOldPrice() != null}" th:text="${'-' + #numbers.formatInteger(100 - product.getPrice() * 100 / product.getOldPrice(), 0)} + '%'" class="product-badge"></div>
+                    <form th:action="@{/shop/add_favorite_product}" method="post" id="product-favourite">
+                        <input type="hidden" name="product_id" th:value="${product.getId()}">
+                        <a href=""></a>
+                    </form>
+                    <img th:src="@{'/image/'+${product.getId()}+'/img1.png'}" class="card_last_img" alt="Product image">
+                    <img th:src="@{'/image/'+${product.getId()}+'/img0.png'}" class="card_second_img" alt="Product image">
+                    <div class="add-to-cart__btn">
+                        <a href="#">add to cart</a>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <span>topshop</span>
+                    <div class="product_title">
+                        <a th:href="'/shop/'+${product.getId()}" class="product_title" th:text="${product.getName()}"></a>
+                    </div>
+                    <div class="parent_blok">
+                        <p class="product_old_price" th:if="${product.getOldPrice() != null}" th:text="'$'+${product.getOldPrice()}"></p>
+                        <p class="product_price" th:text="'$' + ${product.getPrice()}"></p>
+                        <a sec:authorize="hasAuthority('ADMIN')" th:href="'/products/delete-product/' + ${product.getId()}" class="card__edit">delete</a>
+                        <a sec:authorize="hasAuthority('ADMIN')" th:href="'/products/edit/' + ${product.getId()}" class="card__edit">edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</head>
+</html>

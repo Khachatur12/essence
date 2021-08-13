@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@600;900&family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto:wght@300&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css/font.css">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+    <title>Essence</title>
+</head>
+<body>
+    <div class="danger-alert" th:text="${error.getMessage()}">
+
+    </div>
+</body>
+</html>

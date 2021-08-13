@@ -1,0 +1,151 @@
+.header{
+	position: sticky;
+	z-index: 100;
+	top: 0;
+}
+.header__content{
+	border-bottom: 1px solid #ebebeb;
+	background-color: #fff; 
+	/*box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);*/
+}
+.classy-navbar{
+	padding: 37px 0 33px 68px;
+	float: left;
+}
+.header__logo{
+	float: left;
+}
+.menu{
+	float: right;
+	margin-left: 30px;
+}
+.classy-navbar ul li a{
+	padding: 0 12px;
+	font-family: 'Mulish', sans-serif;
+	color: #787878;
+}
+.header-meta{
+	float: right;
+}
+.header-meta-inner{
+	
+}
+.search__area{
+	float: left;
+	height: 89px;
+	border-left: 1px solid #ebebeb;
+	background-color: #fff;
+}
+.search__area-inner:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.search__area input{
+	border: none;
+    background-color: #ffffff;
+    width: 175px;
+    height: 89px;
+    padding: 0 15px 0 15px;
+    color: #787878;
+    font-size: 14px;
+    font-weight: 500;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+.search__area input:focus {
+	width: 320px;
+	outline: none;
+}
+.search__area form button{
+	margin: 45px 0 0 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 30px;
+    background-color: transparent;
+    border: 0px ;
+    color: #787878;
+    font-size: 14px;
+    float: left;
+}
+.search__area-fa:before{
+	content: "\f002";
+	font-family: 'icomoon';
+	font-size: 15px;
+}
+.header-meta-inner a{
+	width: 90px;
+	border-left: 1px solid #ebebeb;
+	padding: 33px;
+	font-size: 15px;
+	font-family: 'Mulish', sans-serif;
+	color: blue;
+	background-color: #fff;
+}
+.favourite-area{
+	float: left;
+	height: 90px;
+}
+.favourite-area a:before{
+	content: "\f08a";
+	font-family: 'icomoon';
+	font-size: 20px;
+	color: #000;
+}
+.user-account-area{
+	float: left;
+	height: 90px;
+}
+.user-account-area a:before{
+	content: "\f2c0";
+	font-family: 'icomoon';
+	font-size: 20px;
+	color: #000;
+}
+.cart-area{
+	float: left;
+	height: 90px;
+}
+.cart-area a:before{
+	content: "\f290";
+	font-family: 'icomoon';
+	font-size: 20px;
+	color: #000;
+}
+
+
+
+
+@media only screen and (max-width: 1000px){
+	.classy-navbar {
+	    padding: 37px 0 33px 35px;
+	    float: left;
+	}
+	.menu{
+		float: left;
+		display: none;
+	}
+	.header-meta{
+
+	}
+	.search__area input:focus {
+		width: 300px;
+		outline: none;
+	}
+}
+
+@media only screen and (max-width: 600px){
+	.search__area{
+		border: none;
+	}
+	.search__area input:focus {
+		width: 175px;
+		outline: none;
+	}
+	.classy-navbar {
+		width: 100%;
+		padding: 37px 0 33px 35px;
+		float: left;
+		border-bottom: 1px solid #ebebeb;
+	}
+}

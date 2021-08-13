@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="https://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+	<meta charset="UTF-8"/>
+
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@600;900&family=Poppins:wght@200;300;400;500;600;700;800&family=Roboto:wght@300&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="/css/font.css">
+	<link rel="stylesheet" type="text/css" href="/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/header.css">
+	<link rel="stylesheet" type="text/css" href="/css/shop.css">
+	<link rel="stylesheet" type="text/css" href="/css/card_product.css">
+	<link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+
+	<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="/js/shop.js"></script>
+	<script type="text/javascript" src="/js/card_products.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<header th:insert="parts/header :: header_content" class="header"></header>
+
+	<section class="breadcrumb_area bg-img bg_fog">
+		<div class="container">
+			<div class="row">
+				<div class="hero-content">
+					<p>DRESSES</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="shop_grid_area">
+		<div class="container">
+			<div class="row">
+				<div class="categories__area">
+					<div class="shop_sidebar__area">
+						<div class="widget category">
+							<h6 class="widget-title">Categories</h6>
+							<div class="categories_menu">
+								<ul class="menu_content">
+
+									<li class="collapse" th:each="category : ${allCategories}" th:id="${category.name}" aria-expanded="false">
+										<a class="widget-title_2" th:data-target="'#'+${category.name}" th:text="${category.name}" href=""></a>
+										<ul class="sub_menu">
+											<li><a th:href="'/shop/search/filter/'+${category.name}">All</a></li>
+											<li th:each="type : ${category.types}">
+												<a th:text="${type.name}" th:href="'/shop/search/filter/'+${category.name}+'/'+${type.name}">Bodysuits</a>
+											</li>
+										</ul>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+
+						<form th:action="@{/shop/search/filter}" method="post">
+							<input type="hidden" name="category_name" th:value="${category_name}">
+							<input type="hidden" name="type_name" th:value="${type_name}">
+							<ul style="display: none">
+								<li th:each="product : ${products}" th:name="product_id">
+									<input type="hidden" th:value="${product.getId()}" name="product_id">
+								</li>
+							</ul>
+
+							<div class="widget">
+								<h6 class="widget-title">Filter By</h6>
+								<p class="widget-title_2">Price</p>
+								<div class="widget-desc price">
+									<input type="number" step="0.01" class="min_price" name="min_price" th:value="${min_price}" placeholder="min price" maxlength="5">
+									<span>-</span>
+									<input type="number" step="0.01" class="max_price" name="max_price" th:value="${max_price}" placeholder="max price" maxlength="5">
+								</div>
+								<p class="widget-title_2">Color</p>
+								<div class="widget-desc color-desc">
+
+									<span th:each="color : ${allColors}">
+										<input type="radio" th:id="'product_color_'+${color.getName()}" name="color_name" class="product_color" th:value="${color.getName()}">
+										<label th:for="'product_color_'+${color.getName()}" th:style="'background-color: '+ ${color.getName()}"></label>
+									</span>
+
+								</div>
+							</div>
+							<div class="widget brands"></div>
+
+							<button type="submit" class="filter_btn">Filter</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="products__area">
+					<div>
+						<div class="row">
+							<h1 th:if="${products == null || products.isEmpty()}">Products not found</h1>
+						</div>
+						
+						<div class="row">
+							<div th:each="product : ${products}" class="column">
+								<div th:insert="parts/card_product :: card__part"></div>
+							</div>
+						</div>
+
+						<div class="navigation"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer th:insert="parts/footer :: footer_content" class="footer"></footer>
+</body>
+</html>
